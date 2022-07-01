@@ -11,10 +11,15 @@ async def on_ready():
 @client.command()
 async def ping(ctx):
     await ctx.send('Pong')
-@client.command()
+@client.command(pass_context = True)
 async def join(ctx):
-    channel = ctx.message.author.voice.channel
-    await channel.connect()  
+    if(ctx.author.voice):
+        channel = ctx.message.author.voice.channel
+        await channel.connect()
+@client.command(pass_context = True)
+async def leave(ctx):
+    if(ctx.voice_client):
+        await ctx.guild.voice_client.disconnect()
 def get_quote():
     response = requests.get("https://zenquotes.io/api/random")
     json_data=json.loads(response.text)
@@ -29,7 +34,7 @@ async def on_message(message):
     if message.author == client.user:
         return
     if message.content.startswith('$hello'):
-        await message.channel.send('Hello! {}'.format(message.author.name))
+        await message.channel.send('Hello {}!'.format(message.author.name))
     if message.content.startswith('$inspire'):
         quote=get_quote()
         await message.channel.send(quote)
