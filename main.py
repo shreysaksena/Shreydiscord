@@ -11,6 +11,8 @@ import giphy_client
 from giphy_client.rest import ApiException
 from discord import Member
 from discord import *
+import re
+
 client = commands.Bot(command_prefix = ',')
 @client.event 
 async def on_ready():
@@ -108,8 +110,8 @@ async def on_message(message):
             await message.delete()
     if 'apesex' in message.content.lower():
         await message.channel.send("Why would you say that? That's weird.{}".format(message.author.mention))
-    if 'valo?' in message.content.lower():
-        await message.channel.send("Cs GO is better game.")
+    if re.compile(r'valo').search("message.content.lower()"):
+        await message.channel.send("CS:GO is better game.")
 client.run(os.getenv('TOKEN'))
 
 
