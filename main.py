@@ -106,7 +106,7 @@ async def on_message(message):
         if 'cum' in message.content.lower():
             await message.channel.send("Get rekt Marsh, you can't use that word.")
             await message.delete()
-    if message.content.lower() == 'apesex':
+    if 'apesex' in message.content.lower():
         await message.channel.send("Why would you say that? That's weird.{}".format(message.author.mention))
     if 'valo?' in message.content.lower():
         await message.channel.send("Cs GO is better game.")
