@@ -85,7 +85,7 @@ async def inspire(ctx,q='random'):
 @client.command()
 async def hello(ctx):
     await ctx.channel.send('Hello {}!'.format(ctx.message.author.mention))
-@client.command()
+# @client.command()
 # async def sana(ctx):
 #     await ctx.channel.send('<:SanaOMG:930216994958090280>')
 @client.command()
