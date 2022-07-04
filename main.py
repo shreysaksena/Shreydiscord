@@ -86,6 +86,9 @@ async def inspire(ctx,q='random'):
 async def hello(ctx):
     await ctx.channel.send('Hello {}!'.format(ctx.message.author.mention))
 @client.command()
+async def sana(ctx):
+    await ctx.channel.send('<:SanaOMG:930216994958090280>')
+@client.command()
 async def bye(ctx):
     await ctx.channel.send('Bye {}! <:puppyeyes:873983378993578074>'.format(ctx.message.author.mention))
 sad_words = ["sad","depressed","depressing","cry"]
