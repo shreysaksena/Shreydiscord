@@ -111,8 +111,8 @@ async def on_message(message):
             await message.delete()
     if 'apesex' in message.content.lower():
         await message.channel.send("Why would you say that? That's weird.{}".format(message.author.mention))
-    if 'valo?' in message.content.lower():
-        await message.channel.send("Cs GO is better game.")
+    # if 'valo?' in message.content.lower():
+    #     await message.channel.send("Cs GO is better game.")
 client.run(os.getenv('TOKEN'))
 
 
