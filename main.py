@@ -118,7 +118,7 @@ async def on_message(message):
 @client.command()
 async def chnick(ctx, member: discord.Member, nick):
     # await ctx.send(' command')
-    if ctx.message.author.name == 'Shrey':
+    if ctx.message.author.name == 'Shrey' or ctx.message.author.name == 'Luci':
         await member.edit(nick=nick)
     await ctx.send('done')
 client.run(os.getenv('TOKEN'))
