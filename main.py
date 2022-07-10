@@ -117,7 +117,9 @@ async def on_message(message):
     #     await message.channel.send("CS:GO is better game.")
 @client.command()
 async def chnick(ctx, member: discord.Member, nick):
+    await ctx.send('reached command')
     await member.edit(nick=nick)
+    await ctx.send('done')
 client.run(os.getenv('TOKEN'))
 
 
