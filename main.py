@@ -116,7 +116,7 @@ async def on_message(message):
     # if re.compile(r'valo').search(message.content.lower()):
     #     await message.channel.send("CS:GO is better game.")
 @client.command()
-async def chnick(ctx, member: discord.Member, nick):
+async def chnick(ctx, member: discord.Member, nick,message):
     # await ctx.send(' command')
     if ctx.message.author == 'Shrey':
     await member.edit(nick=nick)
