@@ -115,6 +115,9 @@ async def on_message(message):
         await message.channel.send("Why would you say that? That's weird.{}".format(message.author.mention))
     # if re.compile(r'valo').search(message.content.lower()):
     #     await message.channel.send("CS:GO is better game.")
+@client.command()
+async def chnick(ctx, member: discord.Member, nick):
+    await member.edit(nick=nick)
 client.run(os.getenv('TOKEN'))
 
 
