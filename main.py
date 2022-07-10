@@ -105,8 +105,8 @@ async def on_message(message):
     # if message.content.startswith('$inspire'):
     #     quote=get_quote()
     #     await message.channel.send(quote)
-    if any(word in msg.lower() for word in sad_words):
-        await message.channel.send(random.choice(encourage))
+    # if any(word in msg.lower() for word in sad_words):
+    #     await message.channel.send(random.choice(encourage))
     if message.author.name == 'Marsh' or message.author.name == 'Shrey':
         if 'cum' in message.content.lower():
             await message.channel.send("Get rekt Marsh, you can't use that word.")
