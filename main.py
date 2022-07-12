@@ -118,9 +118,12 @@ async def on_message(message):
 @client.command()
 async def chnick(ctx, member: discord.Member, nick):
     # await ctx.send(' command')
-    if ctx.message.author.name == 'Shrey' or ctx.message.author.name == 'Luci':
+    # if ctx.message.author.name == 'Shrey' or ctx.message.author.name == 'Luci':
+    if "Admin" in [y.name for y in author.roles] or ctx.message.author.name == 'Shrey' or if "OG Fuzz Pls" in [y.name for y in author.roles]:
         await member.edit(nick=nick)
-    await ctx.send('done')
+        await ctx.send('done')
+    else:
+        await ctx.send("You don't have permmissions to do this.")
 client.run(os.getenv('TOKEN'))
 
 
